@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta name="Fifteen" content="width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <title>Fifteen</title>
+    <style>
+        body {
+            display: flex;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #357236;
+            font-style: italic;
+        }
+
+        .vakje {
+            height: 150px;
+            width: 150px;
+            float: left;
+            background-color: #F3D8B5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            font-size: 60px;
+        }
+
+        .empty {
+
+            background-color: black;
+        }
+        .shuffle {
+            height: 50px;
+            width: 150px;
+            background-color: #F3D8B5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            font-size: 30px;
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+    <script src="index.js"></script>
+</head>
+<body ng-app ="app" ng-controller="controller">
+
+<div>
+    <button ng-click = "addMove()" class = "vakje" id="00" onclick="move(0,0)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="01" onclick="move(0,1)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="02" onclick="move(0,2)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="03" onclick="move(0,3)"></button>
+</div>
+
+<div>
+    <button ng-click = "addMove()"class = "vakje" id="10" onclick="move(1,0)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="11" onclick="move(1,1)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="12" onclick="move(1,2)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="13" onclick="move(1,3)"></button>
+</div>
+
+<div>
+    <button ng-click = "addMove()"class = "vakje" id="20" onclick="move(2,0)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="21" onclick="move(2,1)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="22" onclick="move(2,2)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="23" onclick="move(2,3)"></button>
+</div>
+
+<div>
+    <button ng-click = "addMove()"class = "vakje" id="30" onclick="move(3,0)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="31" onclick="move(3,1)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="32" onclick="move(3,2)"></button>
+    <button ng-click = "addMove()"class = "vakje" id="33" onclick="move(3,3)"></button>
+</div>
+
+<button class="shuffle" onclick="fetchBoard()">Shuffle!</button>
+<button class="shuffle" onclick="solve()">Solve!</button>
+
+<div>Aantal zetten:{{count}}</div>
+
+
+</body>
+</html>
